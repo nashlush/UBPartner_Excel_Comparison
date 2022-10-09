@@ -1,9 +1,14 @@
 from convertToMatrix import convertToStringMatrix
+from compareTableArray import compareArrayValues
 
-pathOfQRTSheets = '.\\'
-qrtNumber = 'Validated-S.38.01.10.xlsx'
-arr = ['A5','C7']
+pathOfOldQRTSheets = '.\\old\\'
+pathOfNewQRTSheets = '.\\new\\'
+qrtNumber = 'Validated-S.01.01.14.xlsx'
+arr1 = ['A5','D10']
+arr2 = ['A5','D10']
 
-table1 = convertToStringMatrix(arr,qrtNumber, pathOfQRTSheets)
-for row in table1:
-    print(row)
+table1 = convertToStringMatrix(arr1,qrtNumber, pathOfOldQRTSheets)
+table2 = convertToStringMatrix(arr2, qrtNumber, pathOfNewQRTSheets)
+
+diff = compareArrayValues(table1,table2)
+print(diff)
