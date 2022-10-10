@@ -13,7 +13,8 @@ def convertToStringMatrix(coordinate, qrtNumber, pathOfQRTSheets):
     exact_path = pathOfQRTSheets+qrtNumber
     wb = openpyxl.load_workbook(exact_path)
     # print(qrtNumber[10:20])
-    ws = wb[qrtNumber[10:20]]
+    qrtNumber = qrtNumber.replace('.xlsx','')
+    ws = wb[qrtNumber]
     
     rows = ws.iter_rows(min_row=min_row, max_row=max_row, min_col=min_col,max_col=max_col)
     # print(rows)
